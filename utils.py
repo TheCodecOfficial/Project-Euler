@@ -1,5 +1,17 @@
 import random
 import math
+from functools import reduce
+
+
+def product(*args):
+    if not args:
+        raise ValueError("At least one argument is required")
+
+    flattened_args = [
+        arg if isinstance(arg, (int, float)) else product(*arg) for arg in args
+    ]
+    result = reduce(lambda x, y: x * y, flattened_args)
+    return result
 
 
 def digit_sum(n):
