@@ -22,6 +22,10 @@ def digits(n):
     return [int(n) for n in str(n)]
 
 
+def num_digits(n):
+    return len(str(n))
+
+
 def is_prime(n):
     return miller_rabin(n)
     # return is_prime_primitive(n)
